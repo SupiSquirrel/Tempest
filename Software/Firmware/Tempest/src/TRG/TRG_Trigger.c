@@ -1,22 +1,8 @@
 /*
-
-	Copyright (C) 2015 Matthias Friedrich
-
-	This file is part of Tempest Firmware.
-
-	Tempest Firmware is free software: you can redistribute it and/or modify
-	it under the terms of the GNU Lesser General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
-
-	Tempest Firmware is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU Lesser General Public License for more details.
-
-	You should have received a copy of the GNU Lesser General Public License
-	along with Tempest Firmware.  If not, see <http://www.gnu.org/licenses/>.
-	
+ * TRG_Trigger.c
+ *
+ * Created: 13.04.2015 21:49:35
+ *  Author: Squirrel
  */ 
 
 
@@ -25,7 +11,6 @@
 #include "IO_Discretes.h"
 #include "IO_SysTickTimer.h"
 #include "GBL_Defines.h"
-
 
 typedef struct {
 	uint32_t State;
@@ -63,8 +48,6 @@ void TRG_Trigger_Update(void) {
 	
 	ActTriggerPulled = IO_Discretes_GetInputIsSet(IO_DISCRETES_CHANNEL_TRIGGER);
 	ActTimerTicks    = IO_SysTickTimer_GetTicks();
-	
-	TRG_Trigger_ClearEdge();
 	
 	if (TRG_Trigger_Context.IsDebounced) {
 		
@@ -107,26 +90,21 @@ void TRG_Trigger_Update(void) {
 	
 }
 
-
 void TRG_Trigger_ClearEdge(void) {
 	TRG_Trigger_Context.Edge = TRG_TRIGGER_EDGE_NONE;
 }
-
 
 uint32_t TRG_Trigger_GetEdge(void) {
 	return TRG_Trigger_Context.Edge;
 }
 
-
 uint32_t TRG_Trigger_GetReleaseTimestampTicks(void) {
 	return TRG_Trigger_Context.ReleaseTimestampTicks;
 }
 
-
 uint32_t TRG_Trigger_GetPullTimestampTicks(void) {
 	return TRG_Trigger_Context.PullTimestampTicks;
 }
-
 
 uint32_t TRG_Trigger_GetState(void) {
 	return TRG_Trigger_Context.State;

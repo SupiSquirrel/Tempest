@@ -1,9 +1,9 @@
 /**
  * \file
  *
- * \brief Global interrupt management for SAM D20, SAM3 and SAM4 (NVIC based)
+ * \brief Global interrupt management for SAM3 and SAM4 (NVIC based)
  *
- * Copyright (c) 2012-2015 Atmel Corporation. All rights reserved.
+ * Copyright (c) 2012 Atmel Corporation. All rights reserved.
  *
  * \asf_license_start
  *
@@ -40,19 +40,12 @@
  * \asf_license_stop
  *
  */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
- */
 
 #ifndef UTILS_INTERRUPT_INTERRUPT_H
 #define UTILS_INTERRUPT_INTERRUPT_H
 
 #include <compiler.h>
 #include <parts.h>
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * \weakgroup interrupt_group
@@ -75,16 +68,16 @@ extern "C" {
  *
  * Usage:
  * \code
-	ISR(foo_irq_handler)
-	{
-	     // Function definition
-	     ...
-	}
-\endcode
+ * ISR(foo_irq_handler)
+ * {
+ *      // Function definition
+ *      ...
+ * }
+ * \endcode
  *
  * \param func Name for the function.
  */
-#  define ISR(func)   \
+#  define ISR(func)    \
 	void func (void)
 
 /**
@@ -96,8 +89,8 @@ extern "C" {
  *
  * This must be called prior to \ref irq_register_handler.
  */
-#  define irq_initialize_vectors()   \
-	do {                             \
+#  define irq_initialize_vectors()                     \
+	do {                                           \
 	} while(0)
 
 /**
@@ -109,9 +102,9 @@ extern "C" {
  *
  * Usage:
  * \code
-	irq_initialize_vectors();
-	irq_register_handler(foo_irq_handler);
-\endcode
+ * irq_initialize_vectors();
+ * irq_register_handler(foo_irq_handler);
+ * \endcode
  *
  * \note The function \a func must be defined with the \ref ISR macro.
  * \note The functions prototypes can be found in the device exception header
@@ -124,33 +117,25 @@ extern "C" {
 
 //@}
 
-#  define cpu_irq_enable()                     \
-	do {                                       \
+#  define cpu_irq_enable()                             \
+	do {                                           \
 		g_interrupt_enabled = true;            \
 		__DMB();                               \
 		__enable_irq();                        \
 	} while (0)
-#  define cpu_irq_disable()                    \
-	do {                                       \
+#  define cpu_irq_disable()                            \
+	do {                                           \
 		__disable_irq();                       \
 		__DMB();                               \
 		g_interrupt_enabled = false;           \
 	} while (0)
 
 typedef uint32_t irqflags_t;
-
-#if !defined(__DOXYGEN__)
-extern volatile bool g_interrupt_enabled;
-#endif
-
-#define cpu_irq_is_enabled()    (__get_PRIMASK() == 0)
-
-static volatile uint32_t cpu_irq_critical_section_counter;
-static volatile bool     cpu_irq_prev_interrupt_state;
+extern bool g_interrupt_enabled;
 
 static inline irqflags_t cpu_irq_save(void)
 {
-	irqflags_t flags = cpu_irq_is_enabled();
+	irqflags_t flags = g_interrupt_enabled;
 	cpu_irq_disable();
 	return flags;
 }
@@ -166,8 +151,7 @@ static inline void cpu_irq_restore(irqflags_t flags)
 		cpu_irq_enable();
 }
 
-void cpu_irq_enter_critical(void);
-void cpu_irq_leave_critical(void);
+#define cpu_irq_is_enabled()    g_interrupt_enabled
 
 /**
  * \weakgroup interrupt_deprecated_group
@@ -181,9 +165,5 @@ void cpu_irq_leave_critical(void);
 //@}
 
 //@}
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* UTILS_INTERRUPT_INTERRUPT_H */
