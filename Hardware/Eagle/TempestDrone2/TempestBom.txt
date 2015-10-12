@@ -1,0 +1,49 @@
+Partlist
+
+Exported from TempestDrone2.brd at 09.10.2015 22:12:44
+
+EAGLE Version 6.6.0 Copyright (c) 1988-2014 CadSoft
+
+Assembly variant: 
+
+Part     Value                Package            Library  Position (mm)         Orientation
+
+C1       dnp                  _0603MP            squirrel (22.6678 71.338)      R180
+C2       dnp                  _0603MP            squirrel (22.727 76.1532)      R180
+C3       2.2µ                 C0805              squirrel (31 58.9)             R0                  0.07
+C4       100n                 _0603MP            squirrel (26.594 76.0612)      R180
+C5       100n                 _0603MP            squirrel (26.389 67.6968)      R0
+C6       100n                 _0603MP            squirrel (29.161 76.4612)      R0
+C7       2.2µ                 C0805              squirrel (27.8 62)             R270                0.07
+C9       100n                 _0603MP            squirrel (15.515471875 39.60048125) R90
+C10      2.2µ                 _0603MP            squirrel (15.515475 36.90048125) R90               0.07
+C24      22µ                  C1206              squirrel (30.7608 81.1564)     R90                 0.08
+CON1     MOLEX_51281          MOLEX_51281        squirrel (24.49863125 82.601815625) R164           0,54
+CON2     B2B-ZR               S2B-ZR             squirrel (30.7 57.3)           R0                  0.08
+CON3     FE05-2HD-2           FE02-2-HD-2        squirrel (38.1 69.8)           R75                 0,39
+CON5     FE05-2HD-2           FE02-2-HD-2        squirrel (22.915475 50.20048125) R180              0,39
+CON7     FE05-2HD-2           FE02-2-HD-2        squirrel (37.707 79.5122)      R345                0,57
+D1       SOD123               SOD123             squirrel (27.497 56.9398)      R270                0,15
+D3       BAT54C               SOT23              diode    (35.776 60.8942)      R270                0.04
+IC1      ATSAMD21E            QFN-32             squirrel (28.234 72.0622)      R270                2.59
+LED1     LED-TRICOLORSMD_SIDE RGB-LED-SMD-SIDE   squirrel (45.146184375 31.732578125) R185          0.56
+Q1       dnp                  XTAL_32X15         squirrel (23.362 74.5022)      R90
+R1       10K                  _0603MP            squirrel (32.3388 76.001)      R90
+R2       100K                 _0603MP            squirrel (37.2 58.7)           R90
+R3       100K                 _0603MP            squirrel (52.8 62.8)           R0
+R4       10K                  _0603MP            squirrel (35.124 57.9728)      R0
+R5       18K                  _0603MP            squirrel (25.7612 57.154)      R90
+R7       100K                 _0603MP            squirrel (28.015475 49.20048125) R90
+R10      390                  _0603MP            squirrel (19.2392 72.1696)     R270
+R14      1K                   _0603MP            squirrel (44.7 35.2)           R90
+R15      1K                   _0603MP            squirrel (42.5 35.2)           R90
+R16      1K                   _0603MP            squirrel (43.6 35.2)           R90
+S1       SWITCH-BUTTONSIDE_EZ TACTILE-PTH-SIDEEZ squirrel (44.991284375 20.99961875) R95            0,27
+S2       SWITCH-BUTTONSIDE_EZ TACTILE-PTH-SIDEEZ squirrel (46.036003125 10.575375) R95              0,27
+S3       SWITCH-BUTTON        D2F-A              squirrel (24.6304 60.17135)    R345                1.36
+SW3      PUSHBUTTONMICRO2     PUSHBUTTON-MICRO2  squirrel (36.7122 55.697)      R180                0.72 
+U$1      AMS002               AMS00X             AMS00x   (17.215475 46.60048125) R270              8,49
+U1       TPS709               SOT23-5            squirrel (31.3 62)             R0                  0.78
+---------------------------------------------------------------------------------------------------------
+                                                                                                   17.14
+                                                                                                   24.32 Fab
