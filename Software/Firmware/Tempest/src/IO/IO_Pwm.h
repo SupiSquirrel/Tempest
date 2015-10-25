@@ -26,7 +26,7 @@
 
 void IO_Pwm_Initialize(void);
 
-void IO_Pwm_OneShotTcc1(void);
+void IO_Pwm_OneShotTcc1(uint32_t uSec);
 
 
 #endif /* IO_PWM_H_ */

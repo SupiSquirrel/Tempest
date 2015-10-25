@@ -31,5 +31,7 @@ void IO_SerialUart_Write(const uint8_t *txData, uint16_t length);
 void IO_SerialUart_Write_Blocking(const uint8_t *txData, uint16_t length);
 uint32_t IO_SerialUart_ReadChar(uint16_t *const RxData);
 
+bool IO_SerialUart_QueueIsEmpty(void);
+
 
 #endif /* IO_SERIALUART_H_ */

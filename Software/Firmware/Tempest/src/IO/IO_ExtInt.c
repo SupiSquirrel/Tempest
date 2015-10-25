@@ -25,7 +25,9 @@
 
 
 void IO_ExtInt_Initialize(void) {
+#ifdef ETEK5
 	struct extint_chan_conf config_extint_chan;
+
 
 	extint_chan_get_config_defaults(&config_extint_chan);
 
@@ -37,6 +39,7 @@ void IO_ExtInt_Initialize(void) {
 	config_extint_chan.detection_criteria = EXTINT_DETECT_RISING;
 
 	extint_chan_set_config(IO_EXTINT_OBS_RX_EIC_LINE, &config_extint_chan);
+#endif
 }
 
 

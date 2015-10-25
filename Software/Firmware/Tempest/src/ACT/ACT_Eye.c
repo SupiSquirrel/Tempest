@@ -71,7 +71,8 @@ void ACT_Eye_Update(void) {
 	}
 	
 	IO_Discretes_SetOutputInactive(IO_DISCRETES_CHANNEL_OBS_TX); */
-	
+
+#ifdef ETEK5	
 	// Method 2: hardware generated pwm for eye tx, external interrupt for rx
 	if (IO_SysTickTimer_GetTicks() >= ACT_Eye_Context.LastSampleTicks + ACT_EYE_SAMPLE_FREQUENCY_TICKS) {
 		
@@ -84,9 +85,16 @@ void ACT_Eye_Update(void) {
 			ACT_Eye_Context.BallDetected = true;
 		}
 	}
+#endif
 }
 
 
 bool ACT_Eye_GetBallDetected(void) {
+#ifdef ETEK5
 	return ACT_Eye_Context.BallDetected;
+#endif
+
+#ifdef DRONE2
+	return IO_Discretes_GetInputIsSet(IO_DISCRETES_CHANNEL_OBS_RX);
+#endif
 }

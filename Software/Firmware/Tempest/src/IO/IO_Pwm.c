@@ -38,6 +38,8 @@ void IO_Pwm_Initialize(void) {
 	
 	// TCC0 for eye rx pwm
 	
+	
+#ifdef ETEK5	
 	/* Structure used to store the TCC configuration parameters */
 	struct tcc_config ConfigTcc0;
 
@@ -74,7 +76,7 @@ void IO_Pwm_Initialize(void) {
 	tcc_init(&(IO_Pwm_Context.TccInstanceTcc0), TCC0, &ConfigTcc0);
 		
 	tcc_enable(&(IO_Pwm_Context.TccInstanceTcc0));
-		
+#endif		
 		
 	// TCC1 for solenoid timing
 	
@@ -92,7 +94,7 @@ void IO_Pwm_Initialize(void) {
 	ConfigTcc1.counter.clock_prescaler = TCC_CLOCK_PRESCALER_DIV8; // 1 MHz
 	
 	 /* Configure the value for TOP value */
-	 ConfigTcc1.counter.period = 11904;
+	 ConfigTcc1.counter.period = 25000;
 	 
 	/* Configure the TCC Waveform Output pins for waveform generation output */
 	ConfigTcc1.pins.enable_wave_out_pin[0] = true;
@@ -101,8 +103,8 @@ void IO_Pwm_Initialize(void) {
 	/* Configure the alternate function of GPIO pins for TCC functionality */
 	ConfigTcc1.pins.wave_out_pin_mux[0] = MUX_PA06E_TCC1_WO0;
 	
-	/* Configure the Match value for the compare channel 2 for LED0 ON time*/
-	ConfigTcc1.compare.match[0] = 11904;
+	/* Configure the Match value for the compare channel 2 for ON time*/
+	ConfigTcc1.compare.match[0] = 25000;
 	
 	/* Invert the Waveform output[6] channel to drive LED0 */
 	ConfigTcc1.wave_ext.invert[0] = false;
@@ -112,8 +114,8 @@ void IO_Pwm_Initialize(void) {
 	
 	tcc_init(&(IO_Pwm_Context.TccInstanceTcc1), TCC1, &ConfigTcc1);
 	
-	// set counter value to match value to prevent unswanted shot.
-	tcc_set_count_value(&(IO_Pwm_Context.TccInstanceTcc1), 11904);	
+	// set counter value to match value to prevent unwanted shot.
+	tcc_set_count_value(&(IO_Pwm_Context.TccInstanceTcc1), 25000);	
 	
 	tcc_enable(&(IO_Pwm_Context.TccInstanceTcc1));
 		
@@ -121,7 +123,9 @@ void IO_Pwm_Initialize(void) {
 }
 
 
-void IO_Pwm_OneShotTcc1(void) {
-	tcc_set_count_value(&(IO_Pwm_Context.TccInstanceTcc1), 0);
-	tcc_restart_counter(&(IO_Pwm_Context.TccInstanceTcc1));
+void IO_Pwm_OneShotTcc1(uint32_t uSec) {
+	if (uSec <= 25000) {
+		tcc_set_count_value(&(IO_Pwm_Context.TccInstanceTcc1), 25000 - uSec);
+		tcc_restart_counter(&(IO_Pwm_Context.TccInstanceTcc1));
+	}
 }

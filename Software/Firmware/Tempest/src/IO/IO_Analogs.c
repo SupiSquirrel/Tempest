@@ -43,7 +43,12 @@ void IO_Analogs_Initialize(void) {
 	config_adc.gain_factor     = ADC_GAIN_FACTOR_DIV2;
 	config_adc.clock_prescaler = ADC_CLOCK_PRESCALER_DIV512;
 	config_adc.reference       = ADC_REFERENCE_INTVCC1;
+#ifdef ETEK5
 	config_adc.positive_input  = ADC_POSITIVE_INPUT_PIN7;
+#endif
+#ifdef DRONE2
+	config_adc.positive_input  = ADC_POSITIVE_INPUT_PIN16;
+#endif
 	config_adc.resolution      = ADC_RESOLUTION_10BIT;
 	config_adc.freerunning     = true;
 
@@ -53,7 +58,7 @@ void IO_Analogs_Initialize(void) {
 	
 	adc_start_conversion(&(IO_Analogs_Context.adc_instance));
 	
-	IO_Analogs_Context.LastGoodVcc = 0.0;
+	IO_Analogs_Context.LastGoodVcc = 0;
 	
 }
 

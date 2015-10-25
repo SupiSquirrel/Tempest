@@ -55,7 +55,7 @@ void IO_SerialUart_Initialize(void)
 
 	usart_get_config_defaults(&ConfigUart);
 
-	ConfigUart.baudrate    = 115200;
+	ConfigUart.baudrate    = 57600;
 	ConfigUart.mux_setting = EDBG_CDC_SERCOM_MUX_SETTING;
 	ConfigUart.pinmux_pad0 = EDBG_CDC_SERCOM_PINMUX_PAD0;
 	ConfigUart.pinmux_pad1 = EDBG_CDC_SERCOM_PINMUX_PAD1;
@@ -91,6 +91,10 @@ static bool IO_SerialUart_GetQueueHasElements(void) {
 	return (IO_SerialUart_Context.QueueTail != IO_SerialUart_Context.QueueHead);
 }
 
+
+bool IO_SerialUart_QueueIsEmpty(void) {
+	return (IO_SerialUart_GetQueueFreeElements() == IO_SERIALUART_QUEUE_SIZE);
+}
 
 void IO_SerialUart_Update(void) {
 	if (IO_SerialUart_GetQueueHasElements()) {

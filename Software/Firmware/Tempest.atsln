@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Atmel Studio Solution File, Format Version 11.00
-Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Tempest", "Tempest\Tempest.cproj", "{B0C88762-4CC3-475F-8B96-DAFD45505B33}"
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Tempest", "Tempest\Tempest.cproj", "{0CDE6AE2-55F9-4D0C-97BB-A68A9260CA8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|ARM = Release|ARM
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B0C88762-4CC3-475F-8B96-DAFD45505B33}.Debug|ARM.ActiveCfg = Debug|ARM
-		{B0C88762-4CC3-475F-8B96-DAFD45505B33}.Debug|ARM.Build.0 = Debug|ARM
-		{B0C88762-4CC3-475F-8B96-DAFD45505B33}.Release|ARM.ActiveCfg = Release|ARM
-		{B0C88762-4CC3-475F-8B96-DAFD45505B33}.Release|ARM.Build.0 = Release|ARM
+		{0CDE6AE2-55F9-4D0C-97BB-A68A9260CA8F}.Debug|ARM.ActiveCfg = Debug|ARM
+		{0CDE6AE2-55F9-4D0C-97BB-A68A9260CA8F}.Debug|ARM.Build.0 = Debug|ARM
+		{0CDE6AE2-55F9-4D0C-97BB-A68A9260CA8F}.Release|ARM.ActiveCfg = Release|ARM
+		{0CDE6AE2-55F9-4D0C-97BB-A68A9260CA8F}.Release|ARM.Build.0 = Release|ARM
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

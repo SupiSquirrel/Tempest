@@ -3,7 +3,7 @@
  *
  * \brief Global interrupt management for 8- and 32-bit AVR
  *
- * Copyright (c) 2010-2012 Atmel Corporation. All rights reserved.
+ * Copyright (c) 2010-2015 Atmel Corporation. All rights reserved.
  *
  * \asf_license_start
  *
@@ -40,6 +40,9 @@
  * \asf_license_stop
  *
  */
+/*
+ * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
+ */
 #ifndef UTILS_INTERRUPT_H
 #define UTILS_INTERRUPT_H
 
@@ -49,7 +52,7 @@
 #  include "interrupt/interrupt_avr8.h"
 #elif UC3
 #  include "interrupt/interrupt_avr32.h"
-#elif SAM3S || SAM3N || SAM3XA || SAM3U || SAM4S || SAM4L
+#elif SAM
 #  include "interrupt/interrupt_sam_nvic.h"
 #else
 #  error Unsupported device.
@@ -69,7 +72,7 @@
  * \brief Force usage of the ASF INTC driver
  *
  * Predefine this symbol when preprocessing to force the use of the ASF INTC driver.
- * This is useful to ensure compatibilty accross compilers and shall be used only when required
+ * This is useful to ensure compatibility across compilers and shall be used only when required
  * by the application needs.
  */
 #  define CONFIG_INTERRUPT_FORCE_INTC

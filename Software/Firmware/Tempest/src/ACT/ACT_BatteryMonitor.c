@@ -29,13 +29,18 @@
 
 #define ACT_BATTERYMONITOR_ADC_TO_VOLTAGE_FACTOR 0.009221311
 #define ACT_BATTERYMONITOR_VOLTAGE_TO_ADC_FACTOR 108.0
-#define ACT_BATTERYMONITOR_VOLTAGE_CONSTANT_ADD  0.213
+#define ACT_BATTERYMONITOR_VOLTAGE_CONSTANT_ADD  0.113
+
+#define NR_OF_VOLTAGE_SAMPLES 4
 
 
 typedef struct {
 	float BatteryVoltage;
 	uint32_t PushedCounter;
 	uint32_t PushedStartTick;
+	uint32_t VoltageSamples[NR_OF_VOLTAGE_SAMPLES];
+	uint32_t VoltageSampleIndex;
+	uint32_t VoltageSampleSum;
 } ACT_BatteryMonitor_Context_Type;
 
 static ACT_BatteryMonitor_Context_Type ACT_BatteryMonitor_Context;
@@ -43,9 +48,27 @@ static ACT_BatteryMonitor_Context_Type ACT_BatteryMonitor_Context;
 
 
 void ACT_BatteryMonitor_Initialize(void) {
+	uint32_t Counter;
+	
 	ACT_BatteryMonitor_Context.BatteryVoltage  = 0.0;
 	ACT_BatteryMonitor_Context.PushedCounter   = 0u;
 	ACT_BatteryMonitor_Context.PushedStartTick = 0u;
+	
+	for (Counter = 0; Counter < NR_OF_VOLTAGE_SAMPLES; Counter++) {
+		ACT_BatteryMonitor_Context.VoltageSamples[Counter] = 0;
+	}
+	ACT_BatteryMonitor_Context.VoltageSampleIndex   = 0;
+	ACT_BatteryMonitor_Context.VoltageSampleSum     = 0;
+}
+
+
+static void ACT_BatteryMonitor_AddVoltageMeasurement(uint32_t Value) {
+	
+	ACT_BatteryMonitor_Context.VoltageSampleSum += Value;
+	ACT_BatteryMonitor_Context.VoltageSampleSum -= ACT_BatteryMonitor_Context.VoltageSamples[ACT_BatteryMonitor_Context.VoltageSampleIndex % 4];
+	ACT_BatteryMonitor_Context.VoltageSamples[ACT_BatteryMonitor_Context.VoltageSampleIndex % 4] = Value;
+	ACT_BatteryMonitor_Context.VoltageSampleIndex ++;
+	
 }
 
 
@@ -55,7 +78,9 @@ void ACT_BatteryMonitor_Update(void) {
 	
 	// check if button is/was pressed (if Vcc > ~5V)
 	if (AdcValue > 512) {
-		ACT_BatteryMonitor_Context.BatteryVoltage = (float)AdcValue / ACT_BATTERYMONITOR_VOLTAGE_TO_ADC_FACTOR + ACT_BATTERYMONITOR_VOLTAGE_CONSTANT_ADD;
+		//ACT_BatteryMonitor_Context.BatteryVoltage = (float)AdcValue / ACT_BATTERYMONITOR_VOLTAGE_TO_ADC_FACTOR + ACT_BATTERYMONITOR_VOLTAGE_CONSTANT_ADD;
+		ACT_BatteryMonitor_AddVoltageMeasurement(AdcValue);
+		ACT_BatteryMonitor_Context.BatteryVoltage = (((float)ACT_BatteryMonitor_Context.VoltageSampleSum) / 4.0) / ACT_BATTERYMONITOR_VOLTAGE_TO_ADC_FACTOR + ACT_BATTERYMONITOR_VOLTAGE_CONSTANT_ADD;
 		ACT_BatteryMonitor_Context.PushedCounter++;		
 	} else {
 		ACT_BatteryMonitor_Context.PushedCounter   = 0u;
