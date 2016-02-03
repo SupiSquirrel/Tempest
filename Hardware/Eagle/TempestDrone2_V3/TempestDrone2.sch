@@ -2780,29 +2780,6 @@ Source: 008-0260-0_E.pdf</description>
 <rectangle x1="1.425" y1="-0.55" x2="1.8" y2="0.55" layer="51" rot="R180"/>
 <rectangle x1="-0.95" y1="-0.775" x2="-0.65" y2="0.8" layer="21"/>
 </package>
-<package name="PUSHBUTTON-MICRO2">
-<circle x="0" y="0" radius="0.781" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="0.2828" width="0.127" layer="21"/>
-<wire x1="-1.44" y1="-1.37" x2="1.46" y2="-1.37" width="0.1" layer="21"/>
-<wire x1="1.46" y1="-1.37" x2="1.46" y2="-0.52" width="0.1" layer="21"/>
-<wire x1="1.46" y1="-0.52" x2="1.46" y2="0.48" width="0.1" layer="21"/>
-<wire x1="1.46" y1="0.48" x2="1.46" y2="1.33" width="0.1" layer="21"/>
-<wire x1="1.46" y1="1.33" x2="-1.44" y2="1.33" width="0.1" layer="21"/>
-<wire x1="-1.44" y1="1.33" x2="-1.44" y2="0.48" width="0.1" layer="21"/>
-<wire x1="-1.44" y1="0.48" x2="-1.44" y2="-0.52" width="0.1" layer="21"/>
-<wire x1="-1.44" y1="-0.52" x2="-1.44" y2="-1.37" width="0.1" layer="21"/>
-<wire x1="-1.44" y1="0.48" x2="-2.19" y2="0.48" width="0.1" layer="21"/>
-<wire x1="-2.19" y1="0.48" x2="-2.19" y2="-0.52" width="0.1" layer="21"/>
-<wire x1="-2.19" y1="-0.52" x2="-1.44" y2="-0.52" width="0.1" layer="21"/>
-<wire x1="1.46" y1="0.48" x2="2.21" y2="0.48" width="0.1" layer="21"/>
-<wire x1="2.21" y1="0.48" x2="2.21" y2="-0.52" width="0.1" layer="21"/>
-<wire x1="2.21" y1="-0.52" x2="1.46" y2="-0.52" width="0.1" layer="21"/>
-<smd name="1B" x="-1.7" y="-0.7" dx="1.2" dy="1.2" layer="1" rot="R90"/>
-<smd name="2A" x="1.8" y="0.7" dx="1.2" dy="1.2" layer="1" rot="R90"/>
-<smd name="1A" x="-1.7" y="0.7" dx="1.2" dy="1.2" layer="1"/>
-<smd name="2B" x="1.8" y="-0.7" dx="1.2" dy="1.2" layer="1"/>
-<text x="-2.33" y="1.5894" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-</package>
 <package name="FE05-2">
 <description>&lt;b&gt;FEMALE HEADER&lt;/b&gt;</description>
 <circle x="-5.08" y="-1.27" radius="0.127" width="0.4064" layer="51"/>
@@ -3064,16 +3041,16 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="2" y1="2" x2="-2" y2="2" width="0.2032" layer="21"/>
 <pad name="ANCHOR1" x="-3.5" y="2.5" drill="1.2" diameter="2.2" stop="no"/>
 <pad name="ANCHOR2" x="3.5" y="2.5" drill="1.2" diameter="2.2" stop="no"/>
-<pad name="1" x="-2.5" y="0" drill="0.8" diameter="1.7" stop="no"/>
-<pad name="2" x="2.5" y="0" drill="0.8" diameter="1.7" stop="no"/>
+<pad name="1" x="-2.25" y="0" drill="0.8" diameter="1.7" stop="no"/>
+<pad name="2" x="2.25" y="0" drill="0.8" diameter="1.7" stop="no"/>
 <text x="-2.54" y="3.81" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<circle x="2.5" y="0" radius="0.4445" width="0" layer="29"/>
-<circle x="-2.5" y="0" radius="0.4445" width="0" layer="29"/>
+<circle x="2.25" y="0" radius="0.4445" width="0" layer="29"/>
+<circle x="-2.25" y="0" radius="0.4445" width="0" layer="29"/>
 <circle x="-3.5" y="2.5" radius="0.635" width="0" layer="29"/>
 <circle x="3.5" y="2.5" radius="0.635" width="0" layer="29"/>
 <circle x="-3.5" y="2.5" radius="1.143" width="0" layer="30"/>
-<circle x="2.5" y="0" radius="0.889" width="0" layer="30"/>
-<circle x="-2.5" y="0" radius="0.889" width="0" layer="30"/>
+<circle x="2.25" y="0" radius="0.889" width="0" layer="30"/>
+<circle x="-2.25" y="0" radius="0.889" width="0" layer="30"/>
 <circle x="3.5" y="2.5" radius="1.143" width="0" layer="30"/>
 </package>
 <package name="TACTILE_SWITCH_SMD-3">
@@ -3637,6 +3614,27 @@ This setting can be found in the board layout editor under the Edit menu.  Selec
 <text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="PUSHBUTTON-MICRO3">
+<circle x="0" y="0" radius="0.781" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="0.2828" width="0.127" layer="21"/>
+<wire x1="-1.44" y1="-1.27" x2="1.46" y2="-1.27" width="0.1" layer="21"/>
+<wire x1="1.46" y1="-1.27" x2="1.46" y2="-0.52" width="0.1" layer="21"/>
+<wire x1="1.46" y1="-0.52" x2="1.46" y2="0.48" width="0.1" layer="21"/>
+<wire x1="1.46" y1="0.48" x2="1.46" y2="1.23" width="0.1" layer="21"/>
+<wire x1="1.46" y1="1.23" x2="-1.44" y2="1.23" width="0.1" layer="21"/>
+<wire x1="-1.44" y1="1.23" x2="-1.44" y2="0.48" width="0.1" layer="21"/>
+<wire x1="-1.44" y1="0.48" x2="-1.44" y2="-0.52" width="0.1" layer="21"/>
+<wire x1="-1.44" y1="-0.52" x2="-1.44" y2="-1.27" width="0.1" layer="21"/>
+<wire x1="-1.44" y1="0.48" x2="-1.99" y2="0.48" width="0.1" layer="21"/>
+<wire x1="-1.99" y1="0.48" x2="-1.99" y2="-0.52" width="0.1" layer="21"/>
+<wire x1="-1.99" y1="-0.52" x2="-1.44" y2="-0.52" width="0.1" layer="21"/>
+<wire x1="1.46" y1="0.48" x2="2.01" y2="0.48" width="0.1" layer="21"/>
+<wire x1="2.01" y1="0.48" x2="2.01" y2="-0.52" width="0.1" layer="21"/>
+<wire x1="2.01" y1="-0.52" x2="1.46" y2="-0.52" width="0.1" layer="21"/>
+<smd name="2A" x="1.7" y="-0.05" dx="1.7" dy="0.8" layer="1" rot="R90"/>
+<smd name="1A" x="-1.7" y="-0.05" dx="1.7" dy="0.8" layer="1" rot="R270"/>
+<text x="-2.33" y="1.5894" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="R">
@@ -3756,20 +3754,6 @@ This setting can be found in the board layout editor under the Edit menu.  Selec
 <text x="2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 <text x="-2.159" y="-1.143" size="0.8636" layer="93">1</text>
 <text x="1.524" y="-1.143" size="0.8636" layer="93">2</text>
-</symbol>
-<symbol name="SWITCH-MOMENTARY-4">
-<wire x1="1.905" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="0" x2="1.905" y2="1.27" width="0.254" layer="94"/>
-<circle x="-2.54" y="0" radius="0.127" width="0.4064" layer="94"/>
-<circle x="2.54" y="0" radius="0.127" width="0.4064" layer="94"/>
-<text x="-2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
-<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="2"/>
-<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="1A" x="-5.08" y="-2.54" visible="off" length="short" direction="pas" swaplevel="2"/>
-<pin name="2A" x="5.08" y="-2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
-<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="2.54" y1="-2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
 </symbol>
 <symbol name="FE05-2">
 <wire x1="3.81" y1="-7.62" x2="-3.81" y2="-7.62" width="0.4064" layer="94"/>
@@ -5251,24 +5235,6 @@ This setting can be found in the board layout editor under the Edit menu.  Selec
 </device>
 </devices>
 </deviceset>
-<deviceset name="PUSHBUTTON" prefix="SW">
-<gates>
-<gate name="SW" symbol="SWITCH-MOMENTARY-4" x="0" y="0"/>
-</gates>
-<devices>
-<device name="MICRO2" package="PUSHBUTTON-MICRO2">
-<connects>
-<connect gate="SW" pin="1" pad="1A"/>
-<connect gate="SW" pin="1A" pad="1B"/>
-<connect gate="SW" pin="2" pad="2A"/>
-<connect gate="SW" pin="2A" pad="2B"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="FE05-2" prefix="CON">
 <description>&lt;b&gt;FEMALE HEADER&lt;/b&gt;</description>
 <gates>
@@ -5895,6 +5861,163 @@ Two variants - one "with legs" (for hands-free fit on PCB) and another "without 
 </device>
 </devices>
 </deviceset>
+<deviceset name="SWITCH-MOMENTARY-2" prefix="S">
+<description>Various NO switches- pushbuttons, reed, etc</description>
+<gates>
+<gate name="G$1" symbol="SWITCH-MOMENTARY-2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="PTH" package="TACTILE-PTH">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD-2" package="TACTILE_SWITCH_SMD-2">
+<connects>
+<connect gate="G$1" pin="1" pad="2"/>
+<connect gate="G$1" pin="2" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="SWCH-09213"/>
+</technology>
+</technologies>
+</device>
+<device name="12MM" package="TACTILE-PTH-12MM">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="SWCH-09185" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="SMD-1101NE" package="TACTILE-SWITCH-1101NE">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="SWCH-00815" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="PTH_REED" package="REED_SWITCH_PTH">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD-4" package="TACTILE_SWITCH_TALL">
+<connects>
+<connect gate="G$1" pin="1" pad="A2"/>
+<connect gate="G$1" pin="2" pad="B2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="SWCH-11966" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="PTH_REED2" package="REED_SWITCH_PLASTIC">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SIDE_EZ" package="TACTILE-PTH-SIDEEZ">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD-3" package="TACTILE_SWITCH_SMD-3">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD-12MM" package="TACTILE-SMD-12MM">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="PTH_EZ" package="TACTILE-PTH-EZ">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD" package="TACTILE-SWITCH-SMD">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="SWCH-08247" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="SMD-REDUNDANT" package="TACTILE-SWITCH-SMD">
+<connects>
+<connect gate="G$1" pin="1" pad="1 2"/>
+<connect gate="G$1" pin="2" pad="3 4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="SWCH-08247" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="TACTILE-SWITCH-SMD-RIGHT-ANGLE" package="TACTILE_SWITCH-SMD-RIGHT-ANGLE">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="COMP-12265" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="B3U-1000P" package="PUSHBUTTON-MICRO3">
+<connects>
+<connect gate="G$1" pin="1" pad="1A"/>
+<connect gate="G$1" pin="2" pad="2A"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="diode">
@@ -6438,7 +6561,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="FRAME1" library="frames" deviceset="DINA3_L" device=""/>
 <part name="FRAME2" library="frames" deviceset="DINA4_L" device=""/>
 <part name="FRAME3" library="frames" deviceset="DINA4_L" device=""/>
-<part name="IC1" library="squirrel" deviceset="ATSAMD21E" device="" value="ATSAMD21E17A-MU"/>
+<part name="IC1" library="squirrel" deviceset="ATSAMD21E" device="" value="ATSAMD21E17A-MU">
+<attribute name="PART#" value="ATSAMD21E17A-MU"/>
+<attribute name="SUPP" value="Atmel"/>
+</part>
 <part name="GND2" library="squirrel" deviceset="GND" device=""/>
 <part name="R1" library="squirrel" deviceset="R" device="0603" value="10K"/>
 <part name="P+1" library="squirrel" deviceset="VCC" device=""/>
@@ -6461,21 +6587,41 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND8" library="squirrel" deviceset="GND" device=""/>
 <part name="GND9" library="squirrel" deviceset="GND" device=""/>
 <part name="P+13" library="squirrel" deviceset="VCC" device=""/>
-<part name="SW3" library="squirrel" deviceset="PUSHBUTTON" device="MICRO2" value="B3U-1000P"/>
 <part name="GND24" library="squirrel" deviceset="GND" device=""/>
 <part name="FID1" library="squirrel" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
 <part name="FID3" library="squirrel" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
 <part name="FID5" library="squirrel" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
 <part name="FID6" library="squirrel" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
-<part name="S1" library="squirrel" deviceset="SWITCH-BUTTON" device="SIDE_EZ" value="1825027-1"/>
-<part name="S2" library="squirrel" deviceset="SWITCH-BUTTON" device="SIDE_EZ" value="1825027-1"/>
-<part name="LED1" library="squirrel" deviceset="LED-TRICOLOR" device="SMD_SIDE" value="LTST-S310F2KT"/>
-<part name="S3" library="squirrel" deviceset="SWITCH-BUTTON" device="" value="D2F-L-A"/>
-<part name="CON1" library="squirrel" deviceset="MOLEX_51281" device="" value="MOLEX_51281-1094"/>
+<part name="S1" library="squirrel" deviceset="SWITCH-BUTTON" device="SIDE_EZ" value="1825027-1">
+<attribute name="PART#" value="1-1825027-1"/>
+<attribute name="SUPP" value="TE"/>
+</part>
+<part name="S2" library="squirrel" deviceset="SWITCH-BUTTON" device="SIDE_EZ" value="1825027-1">
+<attribute name="PART#" value="1-1825027-1"/>
+<attribute name="SUPP" value="TE"/>
+</part>
+<part name="LED1" library="squirrel" deviceset="LED-TRICOLOR" device="SMD_SIDE" value="LTST-S310F2KT (alt 5988810307F or OVSRRGBCC3)">
+<attribute name="PART#" value="LTST-S310F2KT"/>
+<attribute name="SUPP" value="Lite-On"/>
+</part>
+<part name="S3" library="squirrel" deviceset="SWITCH-BUTTON" device="" value="D2F-L-A">
+<attribute name="PART#" value="D2F-L-A"/>
+<attribute name="SUPP" value="Omron"/>
+</part>
+<part name="CON1" library="squirrel" deviceset="MOLEX_51281" device="" value="MOLEX_51281-1094">
+<attribute name="PART#" value="51281-1094"/>
+<attribute name="SUPP" value="Molex"/>
+</part>
 <part name="C3" library="squirrel" deviceset="C-EU" device="C0805" value="2.2µ/16V"/>
 <part name="C7" library="squirrel" deviceset="C-EU" device="C0805" value="2.2µ/16V"/>
-<part name="CON2" library="squirrel" deviceset="B2B-ZR" device="" value="B2B-ZR(LF)(SN)"/>
-<part name="U$1" library="AMS00x" deviceset="AMS002" device=""/>
+<part name="CON2" library="squirrel" deviceset="B2B-ZR" device="" value="B2B-ZR(LF)(SN)">
+<attribute name="PART#" value="B2B-ZR(LF)(SN)"/>
+<attribute name="SUPP" value="JST"/>
+</part>
+<part name="U$1" library="AMS00x" deviceset="AMS002" device="" value="AMS001/AMS002">
+<attribute name="PART#" value="AMS001 or AMS002"/>
+<attribute name="SUPP" value="Zentri/ack.me"/>
+</part>
 <part name="P+18" library="squirrel" deviceset="VCC" device=""/>
 <part name="GND12" library="squirrel" deviceset="GND" device=""/>
 <part name="P+19" library="squirrel" deviceset="VCC" device=""/>
@@ -6485,9 +6631,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND13" library="squirrel" deviceset="GND" device=""/>
 <part name="GND14" library="squirrel" deviceset="GND" device=""/>
 <part name="R2" library="squirrel" deviceset="R" device="0603" value="100K"/>
-<part name="U1" library="squirrel" deviceset="VREG_SOT23-5" device="" value="TPS70933DBVR"/>
-<part name="CON3" library="squirrel" deviceset="FE05-2" device="HD-2" value="20021111-00010T4LF"/>
-<part name="CON5" library="squirrel" deviceset="FE05-2" device="HD-2" value="M50-3000545"/>
+<part name="U1" library="squirrel" deviceset="VREG_SOT23-5" device="" value="TPS70933DBVR">
+<attribute name="PART#" value="TPS70933DBVR"/>
+<attribute name="SUPP" value="TI"/>
+</part>
+<part name="CON3" library="squirrel" deviceset="FE05-2" device="HD-2" value="20021111-00010T4LF">
+<attribute name="PART#" value="20021111-00010T4LF"/>
+<attribute name="SUPP" value="FCI"/>
+</part>
+<part name="CON5" library="squirrel" deviceset="FE05-2" device="HD-2" value="M50-3000545 (alt. GRPB052VWVN-RC)">
+<attribute name="PART#" value="M50-3000545"/>
+<attribute name="SUPP" value="Harwin"/>
+</part>
 <part name="P+4" library="squirrel" deviceset="VCC" device=""/>
 <part name="GND10" library="squirrel" deviceset="GND" device=""/>
 <part name="R3" library="squirrel" deviceset="R" device="0603" value="100K"/>
@@ -6509,6 +6664,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND18" library="squirrel" deviceset="GND" device=""/>
 <part name="TP1" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
 <part name="TP2" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
+<part name="S4" library="squirrel" deviceset="SWITCH-MOMENTARY-2" device="B3U-1000P">
+<attribute name="PART#" value="B3U-1000P"/>
+<attribute name="SUPP" value="Omron"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -6532,7 +6691,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND50" gate="1" x="365.76" y="60.96"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="G$2" x="287.02" y="0"/>
-<instance part="IC1" gate="SAMD21" x="157.48" y="162.56"/>
+<instance part="IC1" gate="SAMD21" x="157.48" y="162.56">
+<attribute name="PART#" x="157.48" y="162.56" size="1.778" layer="96" display="off"/>
+<attribute name="SUPP" x="157.48" y="162.56" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND2" gate="1" x="106.68" y="114.3"/>
 <instance part="R1" gate="&gt;NAME" x="132.08" y="170.18" rot="R90"/>
 <instance part="P+1" gate="VCC" x="132.08" y="180.34"/>
@@ -6551,34 +6713,48 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND6" gate="1" x="231.14" y="182.88"/>
 <instance part="GND7" gate="1" x="116.84" y="55.88"/>
 <instance part="P+8" gate="VCC" x="119.38" y="88.9"/>
-<instance part="SW3" gate="SW" x="355.6" y="76.2" smashed="yes">
-<attribute name="NAME" x="353.06" y="78.74" size="1.778" layer="95"/>
-<attribute name="VALUE" x="345.44" y="71.12" size="1.778" layer="96"/>
-</instance>
 <instance part="GND24" gate="1" x="157.48" y="114.3"/>
 <instance part="FID1" gate="G$1" x="17.78" y="248.92"/>
 <instance part="FID6" gate="G$1" x="17.78" y="233.68"/>
-<instance part="S1" gate="G$1" x="264.16" y="55.88" rot="R270"/>
-<instance part="S2" gate="G$1" x="309.88" y="114.3" rot="R90"/>
-<instance part="LED1" gate="LED" x="55.88" y="40.64"/>
-<instance part="S3" gate="G$1" x="350.52" y="114.3" rot="R90"/>
+<instance part="S1" gate="G$1" x="264.16" y="55.88" rot="R270">
+<attribute name="PART#" x="264.16" y="55.88" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="SUPP" x="264.16" y="55.88" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="S2" gate="G$1" x="309.88" y="114.3" rot="R90">
+<attribute name="PART#" x="309.88" y="114.3" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="SUPP" x="309.88" y="114.3" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="LED1" gate="LED" x="55.88" y="40.64">
+<attribute name="PART#" x="55.88" y="40.64" size="1.778" layer="96" display="off"/>
+<attribute name="SUPP" x="55.88" y="40.64" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="S3" gate="G$1" x="350.52" y="114.3" rot="R90">
+<attribute name="PART#" x="350.52" y="114.3" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="SUPP" x="350.52" y="114.3" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 <instance part="CON1" gate="G$1" x="297.18" y="218.44"/>
 <instance part="CON1" gate="G$2" x="297.18" y="208.28"/>
 <instance part="CON1" gate="G$3" x="355.6" y="218.44"/>
 <instance part="CON1" gate="G$4" x="355.6" y="198.12"/>
 <instance part="CON1" gate="G$5" x="355.6" y="208.28"/>
 <instance part="CON1" gate="G$6" x="355.6" y="187.96"/>
-<instance part="CON1" gate="G$7" x="297.18" y="170.18"/>
+<instance part="CON1" gate="G$7" x="297.18" y="170.18">
+<attribute name="PART#" x="297.18" y="170.18" size="1.778" layer="96" display="off"/>
+<attribute name="SUPP" x="297.18" y="170.18" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="CON1" gate="G$8" x="297.18" y="180.34"/>
 <instance part="CON1" gate="G$9" x="355.6" y="177.8"/>
 <instance part="CON1" gate="G$10" x="355.6" y="167.64"/>
 <instance part="R2" gate="&gt;NAME" x="248.92" y="50.8" rot="R180"/>
-<instance part="CON3" gate="CON" x="132.08" y="76.2" rot="MR180"/>
+<instance part="CON3" gate="CON" x="132.08" y="76.2" rot="MR180">
+<attribute name="PART#" x="132.08" y="76.2" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="SUPP" x="132.08" y="76.2" size="1.778" layer="96" rot="MR180" display="off"/>
+</instance>
 <instance part="P+4" gate="VCC" x="345.44" y="223.52"/>
 <instance part="GND10" gate="1" x="309.88" y="104.14"/>
-<instance part="TC2030-CTX-NL" gate="G$1" x="134.62" y="25.4"/>
-<instance part="P+9" gate="VCC" x="116.84" y="38.1"/>
-<instance part="GND16" gate="1" x="116.84" y="15.24"/>
+<instance part="TC2030-CTX-NL" gate="G$1" x="152.4" y="27.94"/>
+<instance part="P+9" gate="VCC" x="134.62" y="40.64"/>
+<instance part="GND16" gate="1" x="134.62" y="17.78"/>
 <instance part="CON4" gate="CON" x="25.4" y="152.4">
 <attribute name="SUPP" x="25.4" y="152.4" size="1.778" layer="96" display="off"/>
 <attribute name="PART#" x="25.4" y="152.4" size="1.778" layer="96" display="off"/>
@@ -6592,6 +6768,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND18" gate="1" x="45.72" y="121.92"/>
 <instance part="TP1" gate="G$1" x="337.82" y="190.5" rot="R90"/>
 <instance part="TP2" gate="G$1" x="337.82" y="210.82" rot="R90"/>
+<instance part="S4" gate="G$1" x="355.6" y="76.2">
+<attribute name="PART#" x="355.6" y="76.2" size="1.778" layer="96" display="off"/>
+<attribute name="SUPP" x="355.6" y="76.2" size="1.778" layer="96" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -6630,11 +6810,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="365.76" y1="73.66" x2="365.76" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="365.76" y1="71.12" x2="365.76" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="GND50" gate="1" pin="GND"/>
-<pinref part="SW3" gate="SW" pin="2"/>
 <wire x1="363.22" y1="76.2" x2="360.68" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="SW3" gate="SW" pin="2A"/>
-<wire x1="360.68" y1="73.66" x2="365.76" y2="73.66" width="0.1524" layer="91"/>
-<junction x="365.76" y="73.66"/>
+<pinref part="S4" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="SAMD21" pin="GND1"/>
@@ -6700,10 +6877,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="GND16" gate="1" pin="GND"/>
-<wire x1="116.84" y1="20.32" x2="116.84" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="22.86" x2="134.62" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="TC2030-CTX-NL" gate="G$1" pin="ICSP_CLK/PGC"/>
-<wire x1="121.92" y1="22.86" x2="116.84" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="22.86" x2="116.84" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="25.4" x2="134.62" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="25.4" x2="134.62" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="CON4" gate="CON" pin="GND@1"/>
@@ -6772,8 +6949,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="TC2030-CTX-NL" gate="G$1" pin="VPP/MCLR"/>
 <pinref part="P+9" gate="VCC" pin="VCC"/>
-<wire x1="121.92" y1="33.02" x2="116.84" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="33.02" x2="116.84" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="35.56" x2="134.62" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="35.56" x2="134.62" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DCDC_PWR_EN" class="0">
@@ -6975,8 +7152,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="TC2030-CTX-NL" gate="G$1" pin="VSS(GND)"/>
-<wire x1="121.92" y1="27.94" x2="104.14" y2="27.94" width="0.1524" layer="91"/>
-<label x="104.14" y="27.94" size="1.778" layer="95"/>
+<wire x1="139.7" y1="30.48" x2="121.92" y2="30.48" width="0.1524" layer="91"/>
+<label x="121.92" y="30.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SWCLK" class="0">
@@ -6987,8 +7164,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="TC2030-CTX-NL" gate="G$1" pin="ICSP_DAT/PGD"/>
-<wire x1="121.92" y1="25.4" x2="104.14" y2="25.4" width="0.1524" layer="91"/>
-<label x="104.14" y="25.4" size="1.778" layer="95"/>
+<wire x1="139.7" y1="27.94" x2="121.92" y2="27.94" width="0.1524" layer="91"/>
+<label x="121.92" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SWDIO" class="0">
@@ -6999,8 +7176,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="TC2030-CTX-NL" gate="G$1" pin="VDD"/>
-<wire x1="121.92" y1="30.48" x2="104.14" y2="30.48" width="0.1524" layer="91"/>
-<label x="104.14" y="30.48" size="1.778" layer="95"/>
+<wire x1="139.7" y1="33.02" x2="121.92" y2="33.02" width="0.1524" layer="91"/>
+<label x="121.92" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -7098,12 +7275,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <wire x1="350.52" y1="76.2" x2="347.98" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="347.98" y1="76.2" x2="330.2" y2="76.2" width="0.1524" layer="91"/>
-<junction x="347.98" y="76.2"/>
 <label x="330.2" y="76.2" size="1.778" layer="95"/>
-<pinref part="SW3" gate="SW" pin="1"/>
-<pinref part="SW3" gate="SW" pin="1A"/>
-<wire x1="347.98" y1="73.66" x2="347.98" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="347.98" y1="73.66" x2="350.52" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="S4" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="SAMD21" pin="PA14/XIN"/>
@@ -7217,7 +7390,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="P+13" gate="VCC" x="35.56" y="111.76"/>
 <instance part="FID3" gate="G$1" x="10.16" y="162.56"/>
 <instance part="FID5" gate="G$1" x="10.16" y="170.18"/>
-<instance part="U$1" gate="G$1" x="137.16" y="96.52"/>
+<instance part="U$1" gate="G$1" x="137.16" y="96.52">
+<attribute name="PART#" x="137.16" y="96.52" size="1.778" layer="96" display="off"/>
+<attribute name="SUPP" x="137.16" y="96.52" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="P+18" gate="VCC" x="200.66" y="149.86"/>
 <instance part="GND12" gate="1" x="200.66" y="73.66"/>
 <instance part="P+19" gate="VCC" x="129.54" y="152.4"/>
@@ -7226,7 +7402,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="C10" gate="G$1" x="223.52" y="111.76"/>
 <instance part="GND13" gate="1" x="213.36" y="73.66"/>
 <instance part="GND14" gate="1" x="223.52" y="73.66"/>
-<instance part="CON5" gate="CON" x="48.26" y="88.9" rot="MR180"/>
+<instance part="CON5" gate="CON" x="48.26" y="88.9" rot="MR180">
+<attribute name="PART#" x="48.26" y="88.9" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="SUPP" x="48.26" y="88.9" size="1.778" layer="96" rot="MR180" display="off"/>
+</instance>
 <instance part="C8" gate="&gt;NAME" x="208.28" y="111.76"/>
 </instances>
 <busses>
@@ -7427,8 +7606,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND8" gate="1" x="116.84" y="76.2"/>
 <instance part="C3" gate="G$1" x="78.74" y="111.76"/>
 <instance part="C7" gate="G$1" x="205.74" y="111.76"/>
-<instance part="CON2" gate="G$1" x="20.32" y="106.68" rot="MR0"/>
-<instance part="U1" gate="G$1" x="137.16" y="111.76"/>
+<instance part="CON2" gate="G$1" x="20.32" y="106.68" rot="MR0">
+<attribute name="PART#" x="20.32" y="106.68" size="1.778" layer="96" rot="MR0" display="off"/>
+<attribute name="SUPP" x="20.32" y="106.68" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
+<instance part="U1" gate="G$1" x="137.16" y="111.76">
+<attribute name="PART#" x="137.16" y="111.76" size="1.778" layer="96" display="off"/>
+<attribute name="SUPP" x="137.16" y="111.76" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="R3" gate="&gt;NAME" x="106.68" y="96.52" rot="R90"/>
 <instance part="GND15" gate="1" x="106.68" y="76.2"/>
 </instances>
