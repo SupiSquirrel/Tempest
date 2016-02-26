@@ -36,6 +36,24 @@
 #include "COM_Ams001.h"
 
 
+/*
+
+	set bu i command
+	set sy b n TempestIsComing
+	set sy c e 1
+	set sy c h 1
+	set sy c p 0
+	set sy d n Tempest#
+	set sy i s 7f0007f
+	set ua b 57600
+	gfu 9 mode_sel
+	gfu 3 status_led
+	save
+	reboot
+
+*/
+
+
 typedef struct {
 	uint32_t State;
 	bool IsConnected;
@@ -43,7 +61,6 @@ typedef struct {
 } COM_Ams001_Context_Type;
 
 static COM_Ams001_Context_Type COM_Ams001_Context;
-
 
 
 void COM_Ams001_Initialize(void) {

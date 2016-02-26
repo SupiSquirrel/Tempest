@@ -23,9 +23,9 @@
 #ifndef ACT_SOLENOID_H_
 #define ACT_SOLENOID_H_
 
+#define ACT_SOENOID_EYE_MODE_INACTIVE 0
+#define ACT_SOENOID_EYE_MODE_ACTIVE   1
 
-#define ACT_SOENOID_EYE_MODE_ACTIVE   0
-#define ACT_SOENOID_EYE_MODE_INACTIVE 1
 
 void ACT_Solenoid_Initialize(void);
 

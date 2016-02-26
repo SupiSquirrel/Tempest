@@ -27,6 +27,10 @@
 
 void IO_Eeprom_Initialize(void) {
 
+	/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		Set NVMCTRL_EEPROM_SIZE=0x04
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
     /* Setup EEPROM emulator service */
     enum status_code error_code = eeprom_emulator_init();
     if (error_code == STATUS_ERR_NO_MEMORY) {

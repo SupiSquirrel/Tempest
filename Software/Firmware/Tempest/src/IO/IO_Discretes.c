@@ -179,6 +179,11 @@ void IO_Discretes_Initialize(void) {
 		pin_conf.input_pull = PORT_PIN_PULL_NONE;
 		port_pin_set_config(PIN_PA08, &pin_conf);
 		
+		// up button
+		pin_conf.direction  = PORT_PIN_DIR_INPUT;
+		pin_conf.input_pull = PORT_PIN_PULL_UP;
+		port_pin_set_config(PIN_PA22, &pin_conf);
+		
 		// obs rx
 		pin_conf.direction  = PORT_PIN_DIR_INPUT;
 		pin_conf.input_pull = PORT_PIN_PULL_UP;
@@ -229,6 +234,9 @@ bool IO_Discretes_GetInputIsSet(uint32_t channel) {
 		case IO_DISCRETES_CHANNEL_OBS_RX:
 				return (port_pin_get_input_level(PIN_PA05));
 				break;
+		case IO_DISCRETES_CHANNEL_UP_SWITCH:
+				return (!port_pin_get_input_level(PIN_PA22));
+				break;				
 		
 		#endif
 				

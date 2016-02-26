@@ -121,8 +121,9 @@ static void FM_FireMode_HandleRamp(void) {
    }
 }
 
+/*
 static void FM_FireMode_HandleAuto(void) {
-}
+}*/
 
 float FM_FireMode_GetSolenoidRof(void) {
 	if (FM_FireMode_Context.RampState == RAMP_STATE_RAMP_ACTIVE) {
@@ -133,6 +134,9 @@ float FM_FireMode_GetSolenoidRof(void) {
 }
 
 void FM_FireMode_Update(void) {
+	
+   // test
+   FM_FireMode_Context.UserMode                        = CFG_Config_GetUserSettingFiringMode();
 
    switch (FM_FireMode_Context.UserMode) {
       case FM_FIREMODE_MODE_SEMI:
@@ -142,7 +146,11 @@ void FM_FireMode_Update(void) {
                   FM_FireMode_HandleRamp();
                   break;                  
       case FM_FIREMODE_MODE_AUTO:
-                  FM_FireMode_HandleAuto();
+				  // auto removed
+				  // is now burst
+                  // FM_FireMode_HandleAuto();
+				  
+				  FM_FireMode_HandleSemi();
                   break;
       default:
                   break;

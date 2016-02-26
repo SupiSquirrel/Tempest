@@ -68,6 +68,9 @@ void ACT_Solenoid_Update(void) {
 
 void ACT_Solenoid_FireShot(void) {
 	
+	// test
+	ACT_Solenoid_Context.EyeMode                 = CFG_Config_GetUserSettingEyesOn();
+	
 	// Method 1: manual
 	/*if (!ACT_Solenoid_Context.SolenoidActive) {
 		ACT_Solenoid_Context.SolenoidActive          = true;

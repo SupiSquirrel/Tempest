@@ -52,6 +52,9 @@ int main(void)
 
 	bool WaitForPowerOn;
 	
+	uint32_t UpSwitchPushedCounter    = 0;
+	uint32_t UpSwitchPushedStartTick  = 0;
+	
 	system_init();
 	
 	IO_Discretes_Initialize();
@@ -143,6 +146,24 @@ int main(void)
 		if ((IO_SysTickTimer_GetTicks() >= nextSecTicks) && (false)) {
 			nextSecTicks = IO_SysTickTimer_GetTicks() + IO_SYSTICKTIMER_TICKS_PER_SEC / 10;
 			// printf("");
+		}
+		
+		if (IO_Discretes_GetInputIsSet(IO_DISCRETES_CHANNEL_UP_SWITCH)) {
+			UpSwitchPushedCounter ++;
+		} else {
+			UpSwitchPushedCounter   = 0;
+			UpSwitchPushedStartTick = IO_SysTickTimer_GetTicks();
+		}
+		
+		if (IO_SysTickTimer_GetTicks() > (UpSwitchPushedStartTick + IO_SYSTICKTIMER_TICKS_PER_SEC * 1)) {
+			// toggle eyes
+			if (CFG_Config_GetUserSettingEyesOn() == ACT_SOENOID_EYE_MODE_ACTIVE) {
+				CFG_Config_SetUserParameter(CFG_CONFIG_USER_MODIFIABLE_PARAMETER_EYES_ON, ACT_SOENOID_EYE_MODE_INACTIVE);
+			} else {
+				CFG_Config_SetUserParameter(CFG_CONFIG_USER_MODIFIABLE_PARAMETER_EYES_ON, ACT_SOENOID_EYE_MODE_ACTIVE);
+			}
+			
+			UpSwitchPushedStartTick = IO_SysTickTimer_GetTicks();
 		}
 		
 		// if button is pressed > 5s, power down system.

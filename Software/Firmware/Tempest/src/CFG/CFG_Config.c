@@ -82,7 +82,7 @@ static const CFG_Config_ParameterConsts_Type CFG_Config_ParameterDefaultsLimits[
 		{ // CFG_CONFIG_USER_MODIFIABLE_PARAMETER_EYES_ON
 			.Min     = ACT_SOENOID_EYE_MODE_INACTIVE,
 			.Max     = ACT_SOENOID_EYE_MODE_ACTIVE,
-			.Default = ACT_SOENOID_EYE_MODE_INACTIVE,	
+			.Default = ACT_SOENOID_EYE_MODE_ACTIVE,	
 		}
 };
 

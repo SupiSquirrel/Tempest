@@ -58,15 +58,22 @@ void GBL_LedModing_Update(void) {
 		ACT_Led_SetStepBrightnessB(&ACT_Led_Pattern_Off);
 	}
 	
-	if (ACT_Eye_GetBallDetected()) {
+	if (CFG_Config_GetUserSettingEyesOn() == ACT_SOENOID_EYE_MODE_INACTIVE) {
 		ACT_Led_SetStepBrightnessR(&ACT_Led_Pattern_FlashLong);
-		ACT_Led_SetTimeOffsets(ACT_LED_RED, ACT_LED_NUM_OF_STEPS / 2);
-		ACT_Led_SetStepBrightnessG(&ACT_Led_Pattern_Off);
-		ACT_Led_SetTimeOffsets(ACT_LED_GREEN, ACT_LED_NUM_OF_STEPS / 2);			
-	} else {
-		ACT_Led_SetStepBrightnessR(&ACT_Led_Pattern_Off);
 		ACT_Led_SetTimeOffsets(ACT_LED_RED, ACT_LED_NUM_OF_STEPS / 2);
 		ACT_Led_SetStepBrightnessG(&ACT_Led_Pattern_FlashLong);
 		ACT_Led_SetTimeOffsets(ACT_LED_GREEN, ACT_LED_NUM_OF_STEPS / 2);				
+	} else {
+		if (ACT_Eye_GetBallDetected()) {
+			ACT_Led_SetStepBrightnessR(&ACT_Led_Pattern_FlashLong);
+			ACT_Led_SetTimeOffsets(ACT_LED_RED, ACT_LED_NUM_OF_STEPS / 2);
+			ACT_Led_SetStepBrightnessG(&ACT_Led_Pattern_Off);
+			ACT_Led_SetTimeOffsets(ACT_LED_GREEN, ACT_LED_NUM_OF_STEPS / 2);			
+		} else {
+			ACT_Led_SetStepBrightnessR(&ACT_Led_Pattern_Off);
+			ACT_Led_SetTimeOffsets(ACT_LED_RED, ACT_LED_NUM_OF_STEPS / 2);
+			ACT_Led_SetStepBrightnessG(&ACT_Led_Pattern_FlashLong);
+			ACT_Led_SetTimeOffsets(ACT_LED_GREEN, ACT_LED_NUM_OF_STEPS / 2);				
+		}
 	}
 }
