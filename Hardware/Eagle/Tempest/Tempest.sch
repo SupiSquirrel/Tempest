@@ -8399,8 +8399,8 @@ DIN A4, landscape with extra doc field</description>
 </class>
 </classes>
 <parts>
-<part name="T1" library="squirrel" deviceset="NMOSSOT23-6" device=""/>
-<part name="T2" library="squirrel" deviceset="NMOSSOT23-6" device=""/>
+<part name="T1" library="squirrel" deviceset="NMOSSOT23-6" device="" value="ZXMN3A03E6"/>
+<part name="T2" library="squirrel" deviceset="NMOSSOT23-6" device="" value="ZXMN3A03E6"/>
 <part name="C14" library="squirrel" deviceset="C-EU" device="C1206" value="10µ"/>
 <part name="C15" library="squirrel" deviceset="C-EU" device="C1206" value="22µ"/>
 <part name="GND20" library="squirrel" deviceset="GND" device=""/>
@@ -8470,10 +8470,10 @@ DIN A4, landscape with extra doc field</description>
 <part name="C2" library="squirrel" deviceset="C" device="0603" value="22p"/>
 <part name="GND5" library="squirrel" deviceset="GND" device=""/>
 <part name="GND6" library="squirrel" deviceset="GND" device=""/>
-<part name="D1" library="squirrel" deviceset="DIODE-SCHOTTKY" device="SOD123" value="SOD123"/>
-<part name="D2" library="squirrel" deviceset="DIODE-SCHOTTKY" device="SOD123" value="SOD123"/>
-<part name="D4" library="squirrel" deviceset="ZENER-DIODE" device="SOD123"/>
-<part name="D6" library="squirrel" deviceset="DIODE-SCHOTTKY" device="SOD123" value="SOD123"/>
+<part name="D1" library="squirrel" deviceset="DIODE-SCHOTTKY" device="SOD123" value="PMEG4010ETR"/>
+<part name="D2" library="squirrel" deviceset="DIODE-SCHOTTKY" device="SOD123" value="PMEG4010ETR"/>
+<part name="D4" library="squirrel" deviceset="ZENER-DIODE" device="SOD123" value="BZT52C20"/>
+<part name="D6" library="squirrel" deviceset="DIODE-SCHOTTKY" device="SOD123" value="PMEG4010ETR"/>
 <part name="CON4" library="squirrel" deviceset="HDR2MM-8" device=""/>
 <part name="P+4" library="squirrel" deviceset="V+" device="" value="V9_PROT"/>
 <part name="GND7" library="squirrel" deviceset="GND" device=""/>
@@ -8518,6 +8518,7 @@ DIN A4, landscape with extra doc field</description>
 <part name="FID4" library="squirrel" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
 <part name="FID5" library="squirrel" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
 <part name="FID6" library="squirrel" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
+<part name="R17" library="squirrel" deviceset="R" device="0603" value="100k"/>
 </parts>
 <sheets>
 <sheet>
@@ -8610,6 +8611,7 @@ DIN A4, landscape with extra doc field</description>
 <instance part="FID1" gate="G$1" x="17.78" y="248.92"/>
 <instance part="FID2" gate="G$1" x="17.78" y="241.3"/>
 <instance part="FID6" gate="G$1" x="17.78" y="233.68"/>
+<instance part="R17" gate="&gt;NAME" x="246.38" y="50.8" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -8864,9 +8866,8 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <label x="226.06" y="50.8" size="1.778" layer="95"/>
 <wire x1="226.06" y1="50.8" x2="238.76" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="238.76" y1="50.8" x2="254" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="SW" pin="1"/>
-<wire x1="254" y1="50.8" x2="261.62" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="50.8" x2="241.3" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="R17" gate="&gt;NAME" pin="2"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="SAMD21" pin="PA07"/>
@@ -9367,6 +9368,14 @@ DIN A4, landscape with extra doc field</description>
 <pinref part="CON4" gate="HDR2MM" pin="7"/>
 <wire x1="142.24" y1="78.74" x2="160.02" y2="78.74" width="0.1524" layer="91"/>
 <label x="144.78" y="78.74" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="SW1" gate="SW" pin="1"/>
+<wire x1="254" y1="50.8" x2="261.62" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="50.8" x2="254" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="R17" gate="&gt;NAME" pin="1"/>
 </segment>
 </net>
 </nets>
