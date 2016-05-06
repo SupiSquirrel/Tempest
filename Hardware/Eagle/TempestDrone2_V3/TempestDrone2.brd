@@ -18,13 +18,13 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -49,7 +49,7 @@
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="yes"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="yes"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="yes"/>
@@ -1324,7 +1324,6 @@ design rules under a new name.</description>
 <via x="41.3" y="77.8" extent="1-16" drill="0.3"/>
 <contactref element="S4" pad="2A"/>
 <via x="34.1" y="57" extent="1-16" drill="0.3"/>
-<via x="34.1" y="54.4" extent="1-16" drill="0.3"/>
 </signal>
 <signal name="VCC">
 <contactref element="C4" pad="1"/>
@@ -2168,8 +2167,8 @@ design rules under a new name.</description>
 <approved hash="19,1,4a382da62cd44b4a"/>
 <approved hash="19,1,4a242dba2e8c4912"/>
 <approved hash="19,1,4a8c2d122ff4486a"/>
-<approved hash="19,1,028f8d118fe5007b"/>
 <approved hash="19,1,02278db98e9d0103"/>
+<approved hash="19,1,028f8d118fe5007b"/>
 <approved hash="19,1,023b8da58cc5035b"/>
 </errors>
 </board>
