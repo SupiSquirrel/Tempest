@@ -24,6 +24,7 @@
 #define IO_ANALOGS_H_
 
 #define IO_ANALOGS_CHANNEL_PUSHBUTTON_VCC9         1
+#define IO_ANALOGS_CHANNEL_EYE                     2
 
 void IO_Analogs_Initialize(void);
 void IO_Analogs_Update(void);

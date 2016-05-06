@@ -304,12 +304,12 @@ void COM_CommandInterpreter_Update(void) {
 	
 	if ((COM_Ams001_GetIsConnected()) && (true)) {
 		if (IO_SysTickTimer_GetTicks() >= COM_CommandInterpreter_Context.NextStatusOneUpdateTicks) {
-			COM_CommandInterpreter_Context.NextStatusOneUpdateTicks = IO_SysTickTimer_GetTicks() + IO_SYSTICKTIMER_TICKS_PER_SEC / 15;
+			COM_CommandInterpreter_Context.NextStatusOneUpdateTicks = IO_SysTickTimer_GetTicks() + IO_SYSTICKTIMER_TICKS_PER_SEC / 5;
 			
 			COM_CommandInterpreter_SendStatusOneResponse();	// rofs, trigger, eye
 		}
 		if (IO_SysTickTimer_GetTicks() >= COM_CommandInterpreter_Context.NextStatusTwoUpdateTicks) {
-			COM_CommandInterpreter_Context.NextStatusTwoUpdateTicks = IO_SysTickTimer_GetTicks() + IO_SYSTICKTIMER_TICKS_PER_SEC / 7;
+			COM_CommandInterpreter_Context.NextStatusTwoUpdateTicks = IO_SysTickTimer_GetTicks() + IO_SYSTICKTIMER_TICKS_PER_SEC / 2;
 			
 			COM_CommandInterpreter_SendStatusTwoResponse(); // volt, shotcounter
 		}		

@@ -24,6 +24,7 @@
 #include "TRG_Trigger.h"
 #include "IO_Discretes.h"
 #include "IO_SysTickTimer.h"
+#include "IO_Analogs.h"
 #include "ACT_Solenoid.h"
 #include "CFG_Config.h"
 #include "FM_DetermineRof.h"
@@ -97,4 +98,9 @@ bool ACT_Eye_GetBallDetected(void) {
 #ifdef DRONE2
 	return IO_Discretes_GetInputIsSet(IO_DISCRETES_CHANNEL_OBS_RX);
 #endif
+
+#ifdef SHOCKER
+	return (IO_Analogs_GetChannel(IO_ANALOGS_CHANNEL_EYE) < 768); // todo: check value
+#endif
+
 }

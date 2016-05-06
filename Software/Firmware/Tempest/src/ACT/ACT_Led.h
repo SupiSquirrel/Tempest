@@ -55,6 +55,8 @@ void ACT_Led_SetStepBrightnessG(const ACT_Led_StepBrightness_Type* NewStepBright
 
 void ACT_Led_SetStepBrightnessB(const ACT_Led_StepBrightness_Type* NewStepBrightnessB);
 
+void ACT_Led_SetStepBrightnessPwr(const ACT_Led_StepBrightness_Type* NewStepBrightnessPwrLed);
+
 void ACT_Led_SetTimeOffsets(uint32_t LedIndex, uint32_t Value);
 
 #endif /* ACT_LED_H_ */

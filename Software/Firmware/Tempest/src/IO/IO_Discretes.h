@@ -38,6 +38,7 @@
 #define IO_DISCRETES_CHANNEL_SOLENOID            6
 #define IO_DISCRETES_CHANNEL_OBS_TX              7
 #define IO_DISCRETES_CHANNEL_POWER_ENABLE        8
+#define IO_DISCRETES_CHANNEL_LED_POWER	         9
 
 
 void IO_Discretes_Initialize(void);

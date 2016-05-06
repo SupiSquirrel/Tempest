@@ -38,8 +38,9 @@ typedef struct {
    const ACT_Led_StepBrightness_Type* StepBrightnessR;
    const ACT_Led_StepBrightness_Type* StepBrightnessG;
    const ACT_Led_StepBrightness_Type* StepBrightnessB;
+   const ACT_Led_StepBrightness_Type* StepBrightnessPwrLed;
    
-   uint32_t TimeOffsets[3];
+   uint32_t TimeOffsets[4];
    
 } ACT_Led_Context_Type;
 
@@ -78,13 +79,15 @@ void ACT_Led_Initialize(void) {
    
    ACT_Led_Context.ActStep    = 0;
    
-   ACT_Led_Context.StepBrightnessR = &ACT_Led_Pattern_Off;
-   ACT_Led_Context.StepBrightnessG = &ACT_Led_Pattern_Off;
-   ACT_Led_Context.StepBrightnessB = &ACT_Led_Pattern_Off;
+   ACT_Led_Context.StepBrightnessR      = &ACT_Led_Pattern_Off;
+   ACT_Led_Context.StepBrightnessG      = &ACT_Led_Pattern_Off;
+   ACT_Led_Context.StepBrightnessB      = &ACT_Led_Pattern_Off;
+   ACT_Led_Context.StepBrightnessPwrLed = &ACT_Led_Pattern_Off;
    
    ACT_Led_Context.TimeOffsets[0] = 0;
    ACT_Led_Context.TimeOffsets[1] = 0;
    ACT_Led_Context.TimeOffsets[2] = 0;
+   ACT_Led_Context.TimeOffsets[3] = 0;
 }
 
 
@@ -114,7 +117,13 @@ void ACT_Led_Update(void) {
          IO_Discretes_SetOutputActive(IO_DISCRETES_CHANNEL_LED_BLUE);
       } else {
          IO_Discretes_SetOutputInactive(IO_DISCRETES_CHANNEL_LED_BLUE);
-      }      
+      }
+	  
+      if ((*ACT_Led_Context.StepBrightnessPwrLed).StepBrightness[(ACT_Led_Context.ActStep + ACT_Led_Context.TimeOffsets[ACT_LED_BLUE]) % ACT_LED_NUM_OF_STEPS] != 0) {
+	      IO_Discretes_SetOutputActive(IO_DISCRETES_CHANNEL_LED_POWER);
+	      } else {
+	      IO_Discretes_SetOutputInactive(IO_DISCRETES_CHANNEL_LED_POWER);
+      }	     
       
       // step wrap-around
       ACT_Led_Context.ActStep++;
@@ -138,10 +147,14 @@ void ACT_Led_SetStepBrightnessB(const ACT_Led_StepBrightness_Type* NewStepBright
    ACT_Led_Context.StepBrightnessB = NewStepBrightnessB;
 }
 
+void ACT_Led_SetStepBrightnessPwr(const ACT_Led_StepBrightness_Type* NewStepBrightnessPwrLed) {
+	ACT_Led_Context.StepBrightnessPwrLed = NewStepBrightnessPwrLed;
+}
+
 
 void ACT_Led_SetTimeOffsets(uint32_t LedIndex, uint32_t Value) {
 	
-	if ((LedIndex < 3) && (Value < ACT_LED_NUM_OF_STEPS)) {
+	if ((LedIndex < 4) && (Value < ACT_LED_NUM_OF_STEPS)) {
 		ACT_Led_Context.TimeOffsets[LedIndex] = Value;
 	}
 }

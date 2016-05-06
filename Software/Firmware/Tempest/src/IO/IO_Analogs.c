@@ -27,11 +27,28 @@
 typedef struct {
 	struct adc_module adc_instance;
 	
+	uint32_t ActiveChannel;
+	
 	uint16_t LastGoodVcc;
+	uint16_t LastGoodEye;
 	
 } IO_Analogs_Context_Type;
 
 static IO_Analogs_Context_Type IO_Analogs_Context;
+
+
+#ifdef ETEK5
+#define ADC_VCC_CHANNEL ADC_POSITIVE_INPUT_PIN7
+#define ADC_EYE_CHANNEL ADC_POSITIVE_INPUT_PIN5 // todo: check
+#endif
+#ifdef DRONE2
+#define ADC_VCC_CHANNEL ADC_POSITIVE_INPUT_PIN16
+#define ADC_EYE_CHANNEL ADC_POSITIVE_INPUT_PIN5
+#endif
+#ifdef SHOCKER
+#define ADC_VCC_CHANNEL ADC_POSITIVE_INPUT_PIN16
+#define ADC_EYE_CHANNEL ADC_POSITIVE_INPUT_PIN5
+#endif
 
 
 
@@ -43,14 +60,12 @@ void IO_Analogs_Initialize(void) {
 	config_adc.gain_factor     = ADC_GAIN_FACTOR_DIV2;
 	config_adc.clock_prescaler = ADC_CLOCK_PRESCALER_DIV512;
 	config_adc.reference       = ADC_REFERENCE_INTVCC1;
-#ifdef ETEK5
-	config_adc.positive_input  = ADC_POSITIVE_INPUT_PIN7;
-#endif
-#ifdef DRONE2
-	config_adc.positive_input  = ADC_POSITIVE_INPUT_PIN16;
-#endif
+
+	config_adc.positive_input  = ADC_VCC_CHANNEL;
+
 	config_adc.resolution      = ADC_RESOLUTION_10BIT;
-	config_adc.freerunning     = true;
+	config_adc.freerunning     = false;
+	
 
 	adc_init(&(IO_Analogs_Context.adc_instance), ADC, &config_adc);
 
@@ -59,16 +74,33 @@ void IO_Analogs_Initialize(void) {
 	adc_start_conversion(&(IO_Analogs_Context.adc_instance));
 	
 	IO_Analogs_Context.LastGoodVcc = 0;
+	IO_Analogs_Context.LastGoodEye = 0;
+	
+	IO_Analogs_Context.ActiveChannel = ADC_VCC_CHANNEL;
 	
 }
 
 
 void IO_Analogs_Update(void) {
 	uint16_t result;
+
+	
 	
 	if (adc_read(&(IO_Analogs_Context.adc_instance), &result) != STATUS_BUSY) {
-		IO_Analogs_Context.LastGoodVcc = result;
-		//printf("%d   ", result);
+		
+		if (IO_Analogs_Context.ActiveChannel == ADC_VCC_CHANNEL) {
+			IO_Analogs_Context.LastGoodVcc = result;
+			adc_set_positive_input(&(IO_Analogs_Context.adc_instance), ADC_EYE_CHANNEL);
+			IO_Analogs_Context.ActiveChannel = ADC_EYE_CHANNEL;
+			adc_start_conversion(&(IO_Analogs_Context.adc_instance));
+			
+		} else if (IO_Analogs_Context.ActiveChannel == ADC_EYE_CHANNEL) {
+			IO_Analogs_Context.LastGoodEye = result;
+			adc_set_positive_input(&(IO_Analogs_Context.adc_instance), ADC_VCC_CHANNEL);
+			IO_Analogs_Context.ActiveChannel = ADC_VCC_CHANNEL;
+			adc_start_conversion(&(IO_Analogs_Context.adc_instance));
+		}
+		
 	}
 }
 
@@ -77,5 +109,8 @@ uint16_t IO_Analogs_GetChannel(uint32_t channel) {
 	if (channel == IO_ANALOGS_CHANNEL_PUSHBUTTON_VCC9) {
 		return IO_Analogs_Context.LastGoodVcc;
 	}
+	if (channel == IO_ANALOGS_CHANNEL_EYE) {
+		return IO_Analogs_Context.LastGoodEye;
+	}	
 	return 0;
 }

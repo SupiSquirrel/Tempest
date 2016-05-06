@@ -56,6 +56,7 @@ int main(void)
 	uint32_t UpSwitchPushedStartTick  = 0;
 	
 	system_init();
+	system_clock_source_disable(SYSTEM_CLOCK_SOURCE_XOSC32K);
 	
 	IO_Discretes_Initialize();
 	IO_SysTickTimer_Initialize();
@@ -90,6 +91,8 @@ int main(void)
 
 	WaitForPowerOn = true;
 	
+	
+	
 	do {
 		IO_Analogs_Update();
 		ACT_Led_Update();
@@ -108,6 +111,8 @@ int main(void)
 	
 	// enable dcdc power regulator
 	IO_Discretes_SetOutputActive(IO_DISCRETES_CHANNEL_POWER_ENABLE);
+	IO_Discretes_SetOutputActive(IO_DISCRETES_CHANNEL_LED_POWER);
+
 	
 	ACT_BatteryMonitor_ResetButtonPushedTimer();
 	
@@ -116,7 +121,7 @@ int main(void)
 
 	while (true) {
 		// debug: measure runtime of main loop
-		port_pin_set_output_level(PIN_PA18, true);
+		// port_pin_set_output_level(PIN_PA18, true);
 		
 		IO_Analogs_Update();
 		
@@ -178,10 +183,11 @@ int main(void)
 			IO_Discretes_SetOutputInactive(IO_DISCRETES_CHANNEL_POWER_ENABLE);
 			
 			do {
+				ACT_Led_Update();
 			} while (true);
 		}
 		
 		// debug: measure runtime of main loop
-		port_pin_set_output_level(PIN_PA18, false);
+		//port_pin_set_output_level(PIN_PA18, false);
 	}
 }

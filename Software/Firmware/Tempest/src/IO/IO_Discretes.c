@@ -190,6 +190,97 @@ void IO_Discretes_Initialize(void) {
 		port_pin_set_config(PIN_PA05, &pin_conf);		
 	
 #endif
+
+#ifdef SHOCKER
+
+		// ------------ outputs
+
+		// red led
+		pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+		port_pin_set_config(PIN_PA09, &pin_conf);
+		port_pin_set_output_level(PIN_PA09, true);
+		system_pinmux_pin_set_output_strength(PIN_PA09, SYSTEM_PINMUX_PIN_STRENGTH_HIGH);
+
+		//green led
+		pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+		port_pin_set_config(PIN_PA10, &pin_conf);
+		port_pin_set_output_level(PIN_PA10, true);
+		system_pinmux_pin_set_output_strength(PIN_PA10, SYSTEM_PINMUX_PIN_STRENGTH_HIGH);
+
+		// blue led
+		pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+		port_pin_set_config(PIN_PA11, &pin_conf);
+		port_pin_set_output_level(PIN_PA11, true);
+		system_pinmux_pin_set_output_strength(PIN_PA11, SYSTEM_PINMUX_PIN_STRENGTH_HIGH);
+
+		// ams00x reset
+		pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+		port_pin_set_config(PIN_PA22, &pin_conf);
+		port_pin_set_output_level(PIN_PA22, true);
+
+		// ams00x mode_sel
+		pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+		port_pin_set_config(PIN_PA23, &pin_conf);
+		port_pin_set_output_level(PIN_PA23, false);
+
+		// power enable
+		pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+		port_pin_set_config(PIN_PA03, &pin_conf);
+		port_pin_set_output_level(PIN_PA03, false);
+
+		// debug
+		pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+		port_pin_set_config(PIN_PA18, &pin_conf);
+		port_pin_set_output_level(PIN_PA18, false);
+
+		// obs tx
+		// handled by gpio
+		pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+		port_pin_set_config(PIN_PA04, &pin_conf);
+		port_pin_set_output_level(PIN_PA04, true);
+		system_pinmux_pin_set_output_strength(PIN_PA04, SYSTEM_PINMUX_PIN_STRENGTH_HIGH);
+		
+		// power led
+		pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+		port_pin_set_config(PIN_PA00, &pin_conf);
+		port_pin_set_output_level(PIN_PA00, false);
+		system_pinmux_pin_set_output_strength(PIN_PA00, SYSTEM_PINMUX_PIN_STRENGTH_HIGH);
+		
+
+
+		// ------------ inputs
+
+		// ams00x status_led input
+		pin_conf.direction  = PORT_PIN_DIR_INPUT;
+		pin_conf.input_pull = PORT_PIN_PULL_UP;
+		port_pin_set_config(PIN_PA19, &pin_conf);
+
+		// tournament button
+		pin_conf.direction  = PORT_PIN_DIR_INPUT;
+		pin_conf.input_pull = PORT_PIN_PULL_UP;
+		port_pin_set_config(PIN_PA02, &pin_conf);
+
+		// trigger button
+		pin_conf.direction  = PORT_PIN_DIR_INPUT;
+		pin_conf.input_pull = PORT_PIN_PULL_UP;
+		port_pin_set_config(PIN_PA07, &pin_conf);
+
+		// main button
+		pin_conf.direction  = PORT_PIN_DIR_INPUT;
+		pin_conf.input_pull = PORT_PIN_PULL_NONE;
+		port_pin_set_config(PIN_PA08, &pin_conf);
+
+		// up button
+		//pin_conf.direction  = PORT_PIN_DIR_INPUT;
+		//pin_conf.input_pull = PORT_PIN_PULL_UP;
+		//port_pin_set_config(PIN_PA22, &pin_conf);
+
+		// obs rx
+		pin_conf.direction  = PORT_PIN_DIR_INPUT;
+		pin_conf.input_pull = PORT_PIN_PULL_NONE;
+		port_pin_set_config(PIN_PA05, &pin_conf);
+
+#endif
 	
 }
 
@@ -238,7 +329,29 @@ bool IO_Discretes_GetInputIsSet(uint32_t channel) {
 				return (!port_pin_get_input_level(PIN_PA22));
 				break;				
 		
-		#endif
+#endif
+
+#ifdef SHOCKER
+		case IO_DISCRETES_CHANNEL_TRIGGER:
+				return (!port_pin_get_input_level(PIN_PA07));
+				break;
+		case IO_DISCRETES_CHANNEL_AMS_STATUSLED:
+				return (port_pin_get_input_level(PIN_PA19));
+				break;
+		case IO_DISCRETES_CHANNEL_TOURNAMENT_SWITCH:
+				return (!port_pin_get_input_level(PIN_PA02));
+				break;
+		case IO_DISCRETES_CHANNEL_MAIN_SWITCH:
+				return (port_pin_get_input_level(PIN_PA08));
+				break;
+// 		case IO_DISCRETES_CHANNEL_OBS_RX:
+// 				return (port_pin_get_input_level(PIN_PA05));
+// 				break;
+// 		case IO_DISCRETES_CHANNEL_UP_SWITCH:
+// 				return (!port_pin_get_input_level(PIN_PA22));
+// 				break;
+
+#endif
 				
 		default:
 				return false;
@@ -304,7 +417,36 @@ void IO_Discretes_SetOutputActive(uint32_t channel) {
 		case IO_DISCRETES_CHANNEL_POWER_ENABLE:
 			port_pin_set_output_level(PIN_PA15, true);
 			break;
-#endif				
+#endif
+#ifdef SHOCKER
+		case IO_DISCRETES_CHANNEL_LED_RED:
+			port_pin_set_output_level(PIN_PA11, false);
+			break;
+		case IO_DISCRETES_CHANNEL_LED_GREEN:
+			port_pin_set_output_level(PIN_PA10, false);
+			break;
+		case IO_DISCRETES_CHANNEL_LED_BLUE:
+			port_pin_set_output_level(PIN_PA09, false);
+			break;
+		case IO_DISCRETES_CHANNEL_AMS_RESET:
+			port_pin_set_output_level(PIN_PA22, false);
+			break;
+		case IO_DISCRETES_CHANNEL_AMS_MODESEL_STREAM:
+			port_pin_set_output_level(PIN_PA23, true);
+			break;
+		case IO_DISCRETES_CHANNEL_SOLENOID:
+			port_pin_set_output_level(PIN_PA06, true);
+			break;
+		case IO_DISCRETES_CHANNEL_OBS_TX:
+			port_pin_set_output_level(PIN_PA04, true);
+			break;
+		case IO_DISCRETES_CHANNEL_POWER_ENABLE:
+			port_pin_set_output_level(PIN_PA03, true);
+			break;
+		case IO_DISCRETES_CHANNEL_LED_POWER:
+			port_pin_set_output_level(PIN_PA00, true);
+			break;	
+#endif			
 		default:
 				break;
 	}
@@ -365,7 +507,36 @@ void IO_Discretes_SetOutputInactive(uint32_t channel) {
 		case IO_DISCRETES_CHANNEL_POWER_ENABLE:
 			port_pin_set_output_level(PIN_PA15, false);
 			break;
-#endif										
+#endif
+#ifdef SHOCKER
+		case IO_DISCRETES_CHANNEL_LED_RED:
+			port_pin_set_output_level(PIN_PA11, true);
+			break;
+		case IO_DISCRETES_CHANNEL_LED_GREEN:
+			port_pin_set_output_level(PIN_PA10, true);
+			break;
+		case IO_DISCRETES_CHANNEL_LED_BLUE:
+			port_pin_set_output_level(PIN_PA09, true);
+			break;
+		case IO_DISCRETES_CHANNEL_AMS_RESET:
+			port_pin_set_output_level(PIN_PA22, true);
+			break;
+		case IO_DISCRETES_CHANNEL_AMS_MODESEL_STREAM:
+			port_pin_set_output_level(PIN_PA23, false);
+			break;
+		case IO_DISCRETES_CHANNEL_SOLENOID:
+			port_pin_set_output_level(PIN_PA06, false);
+			break;
+		case IO_DISCRETES_CHANNEL_OBS_TX:
+			port_pin_set_output_level(PIN_PA04, false);
+			break;
+		case IO_DISCRETES_CHANNEL_POWER_ENABLE:
+			port_pin_set_output_level(PIN_PA03, false);
+			break;
+		case IO_DISCRETES_CHANNEL_LED_POWER:
+			port_pin_set_output_level(PIN_PA00, false);
+			break;		
+#endif									
 		default:
 				break;
 	}
