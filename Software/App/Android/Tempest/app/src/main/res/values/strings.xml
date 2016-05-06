@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Tempest</string>
+    <string name="action_settings">About</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_settings_fragment">Hello settings fragment</string>
+
+
+    <string name="service_name">ZentriOS BLE</string>
+
+    <string name="progress_title">Connecting...</string>
+    <string name="progress_message">Connecting to BLE device</string>
+
+    <string name="disconnect_dialog_title">Disconnecting...</string>
+    <string name="disconnect_dialog_message">Disconnecting from BLE device</string>
+
+    <string name="con_err_message">Failed to connect to device</string>
+    <string name="con_timeout_message">Connection timed out</string>
+    <string name="discon_timeout_message">Disconnect timed out</string>
+    <string name="discon_err_message">Failed to disconnect from device</string>
+    <string name="device_error_message">Device connection state changed without a request!</string>
+
+
+    <string name="title_activity_device_info">Device Information</string>
+
+    <string name="enable_ble_msg">Bluetooth is disabled! Please enable it from the device settings menu.</string>
+    <string name="char_read_fail_msg">Failed to read characteristic</string>
+
+    <string name="scan_failed_title">Scan Failed</string>
+    <string name="scan_failed_msg_internal_error">An internal error occurred, please try again</string>
+    <string name="scan_failed_msg_unsupported">This device reported that it does not support BLE scanning</string>
+    <string name="scan_failed_msg_reg_failed">The application cannot be registered</string>
+
+    <string name="ble_unsupported_title">Bluetooth Error</string>
+    <string name="ble_unsupported_msg">This device does not support bluetooth!</string>
+
+    <string name="init_fail_title">Initialisation Error</string>
+    <string name="init_fail_msg">Failed to initialise BLE. If your device supports BLE, please ensure it is enabled.</string>
+
+    <string name="send_data_hint">Enter data to send</string>
+    <string name="send_data_button_text">Send</string>
+    <string name="receive_data_hint">Received data goes here</string>
+
+    <string name="update_button_text">Read Values</string>
+    <string name="gpio_value_title">GPIO9:</string>
+    <string name="adc_value_title">ADC:</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="exit">Exit</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+    <string name="about">About</string>
+    <string name="settings">Settings</string>
+    <string name="enable">Enable</string>
+
+    <string name="code_link_display">http://pbhub.de/forum/index.php</string>
+    <string name="code_link">https://github.com/zentri/ble_command_android_demo</string>
+
+    <string name="website_company">http://t3chch3ck.wordpress.com</string>
+
+    <string name="website_docs_display">https://docs.zentri.com</string>
+    <string name="website_docs_link">https://docs.zentri.com/ble/cmd/latest/</string>
+
+    <string name="loc_enable_title">Location Required</string>
+    <string name="loc_enable_msg">Location services are disabled. This application requires these services to discover devices. Please enable Location services to continue.</string>
+
+    <string name="permission_rationale_title">Permission Required</string>
+    <string name="permission_rationale_msg">Android now requires location services to be enabled in order to get Bluetooth Low Energy scan results.</string>
+    <string name="error_permission_denied">This application cannot proceed without the location permission.  The app will now exit</string>
+    <string name="error_loc_disabled">This application cannot proceed without location services enabled.  The app will now exit</string>
+
+    <string name="about_text">Copyright (c) 2016 Matthias Friedrich\n\nSpecial thanks to:\npbhub.de\nhershel\nicp-ms\nxgambitx</string>
+
+    <string name="version_heading">Version: </string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="firing_modes_array">
+        <item>Semi</item>
+        <item>Ramp</item>
+        <item>Burst</item>
+    </string-array>
+</resources>

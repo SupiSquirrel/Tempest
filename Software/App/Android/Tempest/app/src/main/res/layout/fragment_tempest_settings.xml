@@ -1,0 +1,408 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.t3chch3ck.tempest.tempest.TempestSettingsFragment">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.t3chch3ck.tempest.tempest.MainActivity"
+        tools:showIn="@layout/activity_main">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:id="@+id/spaceTop"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="false"
+                    android:id="@+id/firingModeLayout"
+                    android:layout_below="@+id/spaceTop">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Firing Mode"
+                        android:id="@+id/textView5"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="false"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:layout_centerVertical="true" />
+
+                    <Spinner
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinnerFiringMode"
+                        android:layout_alignParentBottom="false"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="75dp"
+                        android:layout_centerVertical="true"
+                        android:minHeight="20dp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_below="@+id/firingModeLayout"
+                    android:id="@+id/spaceBps"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+                <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentEnd="false"
+                android:id="@+id/solRelLayout"
+                android:layout_below="@+id/spaceBps">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Max Rof with eyes ON"
+                    android:id="@+id/textView2"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:textColor="@android:color/holo_blue_light" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="bps"
+                    android:id="@+id/textView4"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="65dp"
+                    android:textStyle="bold"
+                    android:layout_alignBottom="@+id/textViewMaxRofEyesOn"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="12.4"
+                    android:id="@+id/textViewMaxRofEyesOn"
+                    android:layout_alignParentBottom="false"
+                    android:textSize="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:textAlignment="textEnd"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="100dp" />
+
+                <SeekBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekBarMaxRofEyesOn"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:thumb="@drawable/abc_switch_thumb_material"
+                    android:thumbTint="@color/colorPrimaryDark" />
+
+            </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_below="@+id/solRelLayout"
+                    android:id="@+id/spaceBps2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="false"
+                    android:id="@+id/solRelLayout2"
+                    android:layout_below="@+id/spaceBps2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Max Rof with eyes OFF"
+                        android:id="@+id/textView7"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="bps"
+                        android:id="@+id/textView6"
+                        android:layout_alignParentTop="false"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="65dp"
+                        android:textStyle="bold"
+                        android:layout_alignBottom="@+id/textViewMaxRofEyesOff"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="10.0"
+                        android:id="@+id/textViewMaxRofEyesOff"
+                        android:layout_alignParentBottom="false"
+                        android:textSize="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="100dp" />
+
+                    <SeekBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/seekBarMaxRofEyesOff"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:thumb="@drawable/abc_switch_thumb_material"
+                        android:thumbTint="@color/colorPrimaryDark" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_below="@+id/solRelLayout2"
+                    android:id="@+id/spaceBps3"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="false"
+                    android:id="@+id/solRelLayout3"
+                    android:layout_below="@+id/spaceBps3">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Ramp activation RoF"
+                        android:id="@+id/textView8"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="bps"
+                        android:id="@+id/textView9"
+                        android:layout_alignParentTop="false"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="65dp"
+                        android:textStyle="bold"
+                        android:layout_alignBottom="@+id/textViewRampActivation"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="3.0"
+                        android:id="@+id/textViewRampActivation"
+                        android:layout_alignParentBottom="false"
+                        android:textSize="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="100dp" />
+
+                    <SeekBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/seekbarRampActivation"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:thumb="@drawable/abc_switch_thumb_material"
+                        android:thumbTint="@color/colorPrimaryDark" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_below="@+id/solRelLayout3"
+                    android:id="@+id/spaceBps4"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="false"
+                android:id="@+id/solRelLayout4"
+                android:layout_below="@+id/spaceBps4">
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="47dp"
+                    android:text="+"
+                    android:id="@+id/buttonPlusRampAct"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="85dp"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="47dp"
+                    android:text="-"
+                    android:id="@+id/buttonMinusRampAct"
+                    android:layout_alignParentTop="true"
+                    android:layout_toStartOf="@+id/buttonPlusRampAct"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Ramp activation shots"
+                    android:id="@+id/textView"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Dwell"
+                    android:id="@+id/textView10"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="15dp" />
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="47dp"
+                    android:text="+"
+                    android:id="@+id/buttonPlusDwell"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="85dp"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="47dp"
+                    android:text="-"
+                    android:id="@+id/buttonMinusDwell"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/buttonPlusDwell"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="15"
+                    android:id="@+id/textViewDwell"
+                    android:textSize="30dp"
+                    android:textAlignment="textEnd"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentBottom="true" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="5"
+                    android:id="@+id/textViewRampAct"
+                    android:textSize="30dp"
+                    android:textAlignment="textEnd"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="7dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="ms"
+                    android:id="@+id/textView16"
+                    android:layout_marginRight="5dp"
+                    android:textStyle="bold"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignBottom="@+id/textViewDwell" />
+
+            </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_below="@+id/solRelLayout4"
+                    android:id="@+id/spaceBps5"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</FrameLayout>

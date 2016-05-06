@@ -1,0 +1,1 @@
+include ':app', ':zentri_ble_command-1.1.0.0', ':zentri_ble-1.2.1.0'
