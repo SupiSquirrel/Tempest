@@ -1,5 +1,5 @@
 # Tempest
-Tempest Etek 5 Paintball Board
+Tempest: Etek 5 / GTek / Drone 2 / Clone 5 / Shocker SFT/NXT Paintball Board
 
 This product is open source!
 
